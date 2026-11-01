@@ -1,0 +1,36 @@
+{
+  "site": {
+    "name": "Pholio Demo",
+    "url": "https://pholio.example.com",
+    "language": "en",
+    "description": "A minimalist, editorial portfolio template for visual creators."
+  },
+  "creator": {
+    "name": "Alex Creator",
+    "disciplines": ["photography", "videography"],
+    "tagline": "Capturing moments, crafting stories.",
+    "bio": "Alex Creator is a visual artist based in Berlin, working across photography, video, and digital art. With a focus on natural light and candid moments, Alex's work explores the intersection of memory and place.",
+    "location": "Berlin, Germany",
+    "portrait": {
+      "src": "about/portrait",
+      "alt": "Portrait of Alex Creator"
+    }
+  },
+  "hero": {
+    "image": {
+      "src": "home/hero",
+      "alt": "Hero image showing a landscape at golden hour"
+    }
+  },
+  "contact": {
+    "email": "hello@pholio.example.com",
+    "availability": "Available for commissions and collaborations."
+  },
+  "social": [
+    { "platform": "instagram", "url": "https://instagram.com/pholio" },
+    { "platform": "vimeo", "url": "https://vimeo.com/pholio" }
+  ],
+  "features": {
+    "shopEnabled": false
+  }
+}

@@ -56,21 +56,22 @@ Each task lists: **ID**, **Objective**, **Implementation scope**, **Dependencies
 | ID | Path | Objective | Implementation scope | Dependencies | Acceptance criteria | Status |
 |---|---|---|---|---|---|---|
 | TASK-0.1 | A+B | Create the documentation foundation | Write README, PRD, ARCHITECTURE, DESIGN, TASKS, AGENTS; cross-document consistency review | None | Six files exist in repo root; responsibilities match the document table; both modes described consistently; no implementation performed | REVIEW |
-| TASK-0.2 | A+B | Review and approve the documentation | Owner reads all six documents; list and resolve contradictions; confirm scope and positioning | TASK-0.1 | Review notes resolved; documents updated; owner approves | TODO |
-| TASK-0.3 | A+B | Prepare development content kit | Placeholder works (several per type), hero, portrait, about text, social links; sample images for pipeline testing | TASK-0.2 | Kit available outside Git or as small samples; covers photo, design, artwork, and video cases | TODO |
-| TASK-0.4 | A+B | Decide open design inputs | Confirm fonts, accent color, nav order, demo brand name (PRD A11) | TASK-0.2 | Decisions recorded in DESIGN.md | TODO |
+| TASK-0.2A | A+B | Product and Technical Foundation Approval | Owner reads PRD.md, ARCHITECTURE.md, TASKS.md, AGENTS.md; list and resolve contradictions; confirm scope, stack, M2 motion, shop toggle, payment providers | TASK-0.1 | Review notes resolved; four documents updated; owner approves product/technical foundation | DONE |
+| TASK-0.2B | A+B | Design Specification Approval | Owner reads DESIGN.md; confirm visual identity, tokens, typography, layouts, motion choreography, component specs; resolve any conflicts with approved foundation | TASK-0.1 | Review notes resolved; DESIGN.md updated; owner approves design specification | TODO |
+| TASK-0.3 | A+B | Prepare development content kit | Placeholder works (several per type), hero, portrait, about text, social links; sample images for pipeline testing | TASK-0.2A | Kit available outside Git or as small samples; covers photo, design, artwork, and video cases. Note: Small JSON seed content in tracked `content/` is acceptable as small development samples (created by TASK-1.3). Outstanding: actual sample image files in `public/images/` for pipeline testing (TASK-8.2). | TODO |
+| TASK-0.4 | A+B | Decide open design inputs | Confirm fonts, accent color, nav order, demo brand name (PRD A11) | TASK-0.2B | Decisions recorded in DESIGN.md | TODO |
 | TASK-0.5 | B | Verify payment provider feasibility (non-blocking) | Check Payhip account eligibility and terms; confirm whether Midtrans, QRIS, and international cards are available for the intended account and market; record findings | None | Written findings in ARCHITECTURE.md section 16 (V1 to V3, V5); unverified items stay marked unverified | TODO |
 
 ## Phase 1: Next.js Initialization
 
 | ID | Path | Objective | Implementation scope | Dependencies | Acceptance criteria | Status |
 |---|---|---|---|---|---|---|
-| TASK-1.1 | A+B | Initialize the project | Create Next.js App Router + TypeScript project with Tailwind CSS v4; set `output: 'export'`; pin stable, compatible versions; confirm Node and package-manager requirements; update README prerequisites | TASK-0.2 | `dev` and `build` run; `out/` produced; versions recorded in README; no unused dependencies | TODO |
-| TASK-1.2 | A+B | Repository hygiene | `.gitignore` including `private/`; lint and typecheck scripts; editor settings; create empty `content/`, `scripts/`, `private/` structure | TASK-1.1 | `private/` ignored (verified with a dummy file); `lint` and `typecheck` pass | TODO |
-| TASK-1.3 | A+B | Content types and loaders | TypeScript types for site, gallery, manifest; loaders; `isShopEnabled()` in `src/lib/features.ts`; seed `site.json` with `shopEnabled: false`, minimal `gallery.json`, and a hand-written sample `image-manifest.json` with matching sample images in `public/images/` (replaced in TASK-8.2) | TASK-1.1, TASK-0.3 | Typed content loads in a page; in application code only `isShopEnabled()` reads the flag; sample manifest resolves every image key in the seed gallery; products loader not yet required | TODO |
-| TASK-1.4 | A+B | Build-time content validation | `scripts/validate-content.mjs` and `prebuild` hook; create `scripts/lib/read-mode.mjs` (ARCHITECTURE section 6.1); implement Mode A checks from ARCHITECTURE section 14.1; decide validation approach (hand-written preferred) | TASK-1.3 | Tooling reads the flag only through `read-mode.mjs`; invalid JSON, duplicate IDs, bad category refs, missing alt, and missing images fail the build with file, ID, and message; valid content passes; `products.json` absent does not fail | TODO |
-| TASK-1.5 | A+B | Baseline static export smoke test | Build, serve `out/` with a static file server, click through routes | TASK-1.1 | Static output works with no runtime; no Server Actions, route handlers, or middleware present | TODO |
-| TASK-1.6 | A+B | Build audit (Mode A baseline) | `scripts/verify-build.mjs` and `postbuild` hook: check `out/shop` absent, no `data-shop`, no `payhip` string (the allowlisted-host check is added in TASK-7.1), preview size cap, no private files in `out/` | TASK-1.5 | Audit passes on a clean Mode A build; fails when a test file is planted in `public/` that violates a rule | TODO |
+| TASK-1.1 | A+B | Initialize the project | Create Next.js App Router + TypeScript project with Tailwind CSS v4; set `output: 'export'`; pin stable, compatible versions; confirm Node and package-manager requirements; update README prerequisites | TASK-0.2A | `dev` and `build` run; `out/` produced; versions recorded in package.json; no unused dependencies | DONE |
+| TASK-1.2 | A+B | Repository hygiene | `.gitignore` including `private/`; lint and typecheck scripts; editor settings; create empty `content/`, `scripts/`, `private/` structure | TASK-1.1 | `private/` ignored (verified with a dummy file); `lint` and `typecheck` pass | DONE |
+| TASK-1.3 | A+B | Content types and loaders | TypeScript types for site, gallery, manifest; loaders; `isShopEnabled()` in `src/lib/features.ts`; seed `site.json` with `shopEnabled: false`, minimal `gallery.json`, and a hand-written sample `image-manifest.json` with matching sample images in `public/images/` (replaced in TASK-8.2) | TASK-1.1 | Typed content loads in a page; in application code only `isShopEnabled()` reads the flag; sample manifest resolves every image key in the seed gallery; products loader not yet required | DONE |
+| TASK-1.4 | A+B | Build-time content validation | `scripts/validate-content.mjs` and `prebuild` hook; create `scripts/lib/read-mode.mjs` (ARCHITECTURE section 6.1); implement Mode A checks from ARCHITECTURE section 14.1; decide validation approach (hand-written preferred) | TASK-1.3 | Tooling reads the flag only through `read-mode.mjs`; invalid JSON, duplicate IDs, bad category refs, missing alt, and missing images fail the build with file, ID, and message; valid content passes; `products.json` absent does not fail | DONE |
+| TASK-1.5 | A+B | Baseline static export smoke test | Build, serve `out/` with a static file server, click through routes | TASK-1.1 | Static output works with no runtime; no Server Actions, route handlers, or middleware present | DONE |
+| TASK-1.6 | A+B | Build audit (Mode A baseline) | `scripts/verify-build.mjs` and `postbuild` hook: check `out/shop` absent, no `data-shop`, no `payhip` string (the allowlisted-host check is added in TASK-7.1), preview size cap, no private files in `out/` | TASK-1.5 | Audit passes on a clean Mode A build; fails when a test file is planted in `public/` that violates a rule | DONE |
 
 ## Phase 2: Tailwind and Design Foundation
 
@@ -80,12 +81,12 @@ Each task lists: **ID**, **Objective**, **Implementation scope**, **Dependencies
 | TASK-2.2 | A+B | Typography | Load display and body fonts with `next/font`; define type scale per DESIGN section 5 | TASK-2.1 | Fonts self-hosted at build; fallbacks defined; scale applied; no layout shift from font loading | TODO |
 | TASK-2.3 | A+B | UI primitives | `Container`, `Section`, `Button`, `Link`, `Chip`, visually-hidden helper | TASK-2.1, TASK-2.2 | All interaction states from DESIGN section 17 implemented; focus-visible works | TODO |
 | TASK-2.4 | A+B | Responsive image component | Component that reads the manifest and outputs `srcset`, `sizes`, `width`, `height`, `alt`, loading hints; decide `<img>` vs `next/image` with `unoptimized`; use the sample manifest seeded in TASK-1.3 until Phase 8 | TASK-1.3 | Images render responsively with no layout shift; missing manifest key fails at build | TODO |
-| TASK-2.5 | A+B | Motion and focus foundation | Reduced-motion handling, transition utilities, fade-in image behavior | TASK-2.3 | Animations respect `prefers-reduced-motion`; no animation library added | TODO |
+| TASK-2.5 | A+B | Motion and focus foundation | Reduced-motion handling, transition utilities, fade-in image behavior; prepares `useReducedMotion` hook and transition utilities for M2 library integration | TASK-2.3 | Reduced-motion handling works; transition utilities available; hook structure ready for GSAP/ScrollTrigger/Lenis integration | TODO |
 | TASK-2.6 | A+B | GSAP core setup | Install GSAP; create `src/lib/gsap.ts` singleton with version pin; register plugins; ensure tree-shaking works with static export | TASK-2.1, TASK-2.5 | GSAP imports in a test component; no build errors; bundle size impact measured | TODO |
 | TASK-2.7 | A+B | ScrollTrigger integration | Install ScrollTrigger; create scroll-based animation utilities (`fadeInUp`, `staggerReveal`, `pinSection`); register in GSAP singleton | TASK-2.6 | Scroll-triggered animations work on a test page; `prefers-reduced-motion` disables all ScrollTrigger animations | TODO |
-| TASK-2.8 | A+B | Lenis smooth scroll | Install Lenis; initialize in a client component mounted in root layout; expose `lenis` instance for ScrollTrigger synchronization; configure `wheelMultiplier`, `touchMultiplier`, `lerp` per DESIGN | TASK-2.6 | Smooth scroll works; ScrollTrigger `scroller` synced with Lenis; no layout shift; respects `prefers-reduced-motion` (disabled) | TODO |
+| TASK-2.8 | A+B | Lenis smooth scroll | Install Lenis; initialize in a client component mounted in root layout; expose `lenis` instance for ScrollTrigger synchronization; configure `wheelMultiplier`, `touchMultiplier`, `lerp` per DESIGN | TASK-2.6, TASK-2.7 | Smooth scroll works; ScrollTrigger `scroller` synced with Lenis; no layout shift; respects `prefers-reduced-motion` (disabled) | TODO |
 | TASK-2.9 | A+B | Reduced-motion implementation | Central `useReducedMotion` hook; disable GSAP/ScrollTrigger/Lenis when `prefers-reduced-motion: reduce`; ensure instant state for all animated elements | TASK-2.6, TASK-2.7, TASK-2.8 | All motion opt-in only; instant snap to final state when reduced motion; no JS errors | TODO |
-| TASK-2.10 | A+B | GSAP/ScrollTrigger/Lenis lifecycle cleanup | `useEffect` cleanup for every GSAP context, ScrollTrigger instance, and Lenis `destroy()`; prevent memory leaks on route changes in Next.js App Router | TASK-2.6, TASK-2.7, TASK-2.8 | No memory leaks in a 10-route navigation test; no stale ScrollTrigger instances; Lenis destroyed on unmount | TODO |
+| TASK-2.10 | A+B | GSAP/ScrollTrigger/Lenis lifecycle cleanup | `useEffect` cleanup for every GSAP context, ScrollTrigger instance, and Lenis `destroy()`; prevent memory leaks on route changes in Next.js App Router | TASK-2.6, TASK-2.7, TASK-2.8, TASK-2.9 | No memory leaks in a 10-route navigation test; no stale ScrollTrigger instances; Lenis destroyed on unmount | TODO |
 | TASK-2.11 | A+B | Mobile performance budget for motion | Measure and document: main-thread blocking time, interaction-to-next-paint (INP), bundle size impact of GSAP+ScrollTrigger+Lenis; set budget (e.g., < 50 KB gzipped for motion bundle); implement code-splitting if needed | TASK-2.6, TASK-2.7, TASK-2.8, TASK-2.9, TASK-2.10 | Motion bundle within budget; INP < 200 ms on mobile test device; no jank on 320 px viewport | TODO |
 
 ## Phase 3: Core Layout and Navigation
@@ -184,15 +185,22 @@ Each task lists: **ID**, **Objective**, **Implementation scope**, **Dependencies
 Phase 0 ─► Phase 1 ─► Phase 2 (incl. 2.6–2.11 M2 Motion) ─► Phase 3 ─► Phase 4 ─► Phase 5 ─┐
                 │                                                          ▲              │
                 └──────────────► Phase 8 (8.1, 8.2 may be pulled forward) ┤
-                                                                      ▼
-                                              Phase 9 ─► Phase 10 (Path A complete at 10.3)
+                                                                       ▼
+                                               Phase 9 ─► Phase 10 (Path A complete at 10.3)
 Path B only:  TASK-1.5 ─► 6.1 ─► 6.2 ─► 6.3 ─► 6.4 ─► 6.5 ─► 6.6 ─► 6.7
               TASK-0.5 ─► 7.1 ─► 7.2 ─► 7.4 ─► 7.5 ─► 10.4
               TASK-9.2 ─► 6.6 (sitemap wiring; 6.6 and 6.7 wait for 9.2 even though Phase 9 comes later)
+
+Phase 0 detail:
+  TASK-0.1 ─► TASK-0.2A ─┬─► TASK-0.3 ─► TASK-1.3
+                         ├─► TASK-1.1 ─► Phase 1
+                         └─► TASK-0.2B ─► TASK-0.4 ─► TASK-2.1, TASK-2.2
 ```
 
 ## 4. Recommended First Task
 
-**TASK-0.2: Review and approve the documentation.** It confirms scope and resolves contradictions before any code. In parallel, start **TASK-0.5** (payment provider feasibility) because account verification can take time and does not block Path A.
+**TASK-0.2A: Product and Technical Foundation Approval.** It confirms scope, stack, M2 motion, shop toggle, and payment providers before any code. In parallel, start **TASK-0.5** (payment provider feasibility) because account verification can take time and does not block Path A.
 
-The first implementation task is **TASK-1.1**, after TASK-0.2 is `DONE`.
+**TASK-0.2B: Design Specification Approval** runs after TASK-0.1 and is required before TASK-0.4 and design-dependent Phase 2 tasks (TASK-2.1, TASK-2.2).
+
+The first implementation task is **TASK-1.1**, after TASK-0.2A is `DONE`.

@@ -339,9 +339,9 @@ Targets apply to Mode A and Mode B. Enabling the shop must not push Portfolio Co
 | A9 | One language per site is sufficient | Assumption | Accepted for MVP |
 | A10 | Email and social links satisfy contact needs without a form backend | Assumption | Accepted for MVP; form provider is P2 |
 | A11 | Candidate fonts and accent color are acceptable | Assumption | Confirm in TASK-2.2 |
-| A12 | GSAP, ScrollTrigger, and Lenis work correctly in Next.js App Router static export with client components | Verification | Verify in TASK-2.5 |
-| A13 | `prefers-reduced-motion` behavior is correctly implemented and tested | Verification | Verify in TASK-2.5 |
-| A14 | Motion performance on mobile and low-end devices meets Lighthouse targets | Verification | Verify in TASK-2.5 |
+| A12 | GSAP, ScrollTrigger, and Lenis work correctly in Next.js App Router static export with client components | Verification | Verify in TASK-2.6, TASK-2.7, TASK-2.8 |
+| A13 | `prefers-reduced-motion` behavior is correctly implemented and tested | Verification | Verify in TASK-2.9 |
+| A14 | Motion performance on mobile and low-end devices meets Lighthouse targets | Verification | Verify in TASK-2.11 |
 
 ## 17. Open Questions
 

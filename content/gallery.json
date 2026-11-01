@@ -1,0 +1,107 @@
+{
+  "categories": [
+    { "id": "landscape", "label": "Landscape" },
+    { "id": "portrait", "label": "Portrait" },
+    { "id": "motion", "label": "Motion" },
+    { "id": "design", "label": "Design" },
+    { "id": "artwork", "label": "Artwork" }
+  ],
+  "works": [
+    {
+      "id": "work-001",
+      "slug": "morning-fog",
+      "title": "Morning Fog",
+      "type": "photo",
+      "category": "landscape",
+      "year": 2026,
+      "featured": true,
+      "order": 1,
+      "cover": { "src": "gallery/morning-fog/01", "alt": "Fog over a ridge at sunrise" },
+      "images": [
+        { "src": "gallery/morning-fog/01", "alt": "Fog over a ridge at sunrise" }
+      ],
+      "description": "Early morning fog rolling over the hills near the coast.",
+      "details": [
+        { "label": "Camera", "value": "Sony A7R IV" },
+        { "label": "Lens", "value": "24-70mm f/2.8" },
+        { "label": "Location", "value": "Coastal Range" }
+      ],
+      "productId": "prod-001"
+    },
+    {
+      "id": "work-002",
+      "slug": "city-reel",
+      "title": "City Reel",
+      "type": "video",
+      "category": "motion",
+      "year": 2026,
+      "featured": true,
+      "order": 2,
+      "cover": { "src": "gallery/city-reel/poster", "alt": "Still frame from the city reel" },
+      "video": { "provider": "vimeo", "id": "123456789" },
+      "description": "A short cinematic reel of urban life.",
+      "details": [
+        { "label": "Duration", "value": "2:15" },
+        { "label": "Role", "value": "Director, Editor" }
+      ]
+    },
+    {
+      "id": "work-003",
+      "slug": "brand-identity",
+      "title": "Brand Identity System",
+      "type": "design",
+      "category": "design",
+      "year": 2026,
+      "featured": false,
+      "order": 3,
+      "cover": { "src": "gallery/brand-identity/01", "alt": "Brand identity mockups on stationery" },
+      "images": [
+        { "src": "gallery/brand-identity/01", "alt": "Brand identity mockups on stationery" }
+      ],
+      "description": "Complete visual identity for a coffee roaster.",
+      "details": [
+        { "label": "Tools", "value": "Figma, Illustrator" },
+        { "label": "Role", "value": "Lead Designer" }
+      ]
+    },
+    {
+      "id": "work-004",
+      "slug": "abstract-series",
+      "title": "Abstract Series No. 3",
+      "type": "artwork",
+      "category": "artwork",
+      "year": 2026,
+      "featured": true,
+      "order": 4,
+      "cover": { "src": "gallery/abstract-series/01", "alt": "Abstract painting with blue and gold tones" },
+      "images": [
+        { "src": "gallery/abstract-series/01", "alt": "Abstract painting with blue and gold tones" }
+      ],
+      "description": "Exploring texture and color in mixed media.",
+      "details": [
+        { "label": "Medium", "value": "Acrylic on canvas" },
+        { "label": "Dimensions", "value": "100x80 cm" }
+      ]
+    },
+    {
+      "id": "work-005",
+      "slug": "portrait-session",
+      "title": "Portrait Session",
+      "type": "photo",
+      "category": "portrait",
+      "year": 2026,
+      "featured": false,
+      "order": 5,
+      "cover": { "src": "gallery/portrait-session/01", "alt": "Natural light portrait in studio" },
+      "images": [
+        { "src": "gallery/portrait-session/01", "alt": "Natural light portrait in studio" }
+      ],
+      "description": "A series of natural light portraits.",
+      "details": [
+        { "label": "Camera", "value": "Canon R5" },
+        { "label": "Lens", "value": "85mm f/1.2" },
+        { "label": "Lighting", "value": "Window light" }
+      ]
+    }
+  ]
+}

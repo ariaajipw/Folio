@@ -1,0 +1,66 @@
+{
+  "gallery/morning-fog/01": {
+    "width": 6000,
+    "height": 4000,
+    "variants": [
+      { "w": 480, "src": "/images/gallery/morning-fog/01-480.webp" },
+      { "w": 960, "src": "/images/gallery/morning-fog/01-960.webp" },
+      { "w": 1600, "src": "/images/gallery/morning-fog/01-1600.webp" }
+    ]
+  },
+  "gallery/city-reel/poster": {
+    "width": 1920,
+    "height": 1080,
+    "variants": [
+      { "w": 480, "src": "/images/gallery/city-reel/poster-480.webp" },
+      { "w": 960, "src": "/images/gallery/city-reel/poster-960.webp" },
+      { "w": 1600, "src": "/images/gallery/city-reel/poster-1600.webp" }
+    ]
+  },
+  "gallery/brand-identity/01": {
+    "width": 4000,
+    "height": 3000,
+    "variants": [
+      { "w": 480, "src": "/images/gallery/brand-identity/01-480.webp" },
+      { "w": 960, "src": "/images/gallery/brand-identity/01-960.webp" },
+      { "w": 1600, "src": "/images/gallery/brand-identity/01-1600.webp" }
+    ]
+  },
+  "gallery/abstract-series/01": {
+    "width": 5000,
+    "height": 4000,
+    "variants": [
+      { "w": 480, "src": "/images/gallery/abstract-series/01-480.webp" },
+      { "w": 960, "src": "/images/gallery/abstract-series/01-960.webp" },
+      { "w": 1600, "src": "/images/gallery/abstract-series/01-1600.webp" }
+    ]
+  },
+  "gallery/portrait-session/01": {
+    "width": 5472,
+    "height": 3648,
+    "variants": [
+      { "w": 480, "src": "/images/gallery/portrait-session/01-480.webp" },
+      { "w": 960, "src": "/images/gallery/portrait-session/01-960.webp" },
+      { "w": 1600, "src": "/images/gallery/portrait-session/01-1600.webp" }
+    ]
+  },
+  "home/hero": {
+    "width": 6000,
+    "height": 3375,
+    "variants": [
+      { "w": 480, "src": "/images/home/hero-480.webp" },
+      { "w": 960, "src": "/images/home/hero-960.webp" },
+      { "w": 1600, "src": "/images/home/hero-1600.webp" },
+      { "w": 2400, "src": "/images/home/hero-2400.webp" }
+    ]
+  },
+  "about/portrait": {
+    "width": 3000,
+    "height": 4000,
+    "variants": [
+      { "w": 480, "src": "/images/about/portrait-480.webp" },
+      { "w": 960, "src": "/images/about/portrait-960.webp" },
+      { "w": 1600, "src": "/images/about/portrait-1600.webp" }
+    ]
+  }
+}

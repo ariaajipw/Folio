@@ -564,9 +564,9 @@ Errors must name the file, the item ID, and the problem.
 | V7 | Cloudflare Pages file-count and file-size limits vs. site size | TASK-10.3 |
 | V8 | Pretty-URL and trailing-slash behavior on Cloudflare Pages with the static export | TASK-10.3 |
 | V9 | Whether a CSP is compatible with hydration scripts in the static export | TASK-9.4 (P2) |
-| V10 | GSAP, ScrollTrigger, and Lenis work correctly in Next.js App Router static export with client components | TASK-2.5 |
-| V11 | `prefers-reduced-motion` behavior is correctly implemented and tested | TASK-2.5 |
-| V12 | Motion performance on mobile and low-end devices meets Lighthouse targets | TASK-2.5 |
+| V10 | GSAP, ScrollTrigger, and Lenis work correctly in Next.js App Router static export with client components | TASK-2.6, TASK-2.7, TASK-2.8 |
+| V11 | `prefers-reduced-motion` behavior is correctly implemented and tested | TASK-2.9 |
+| V12 | Motion performance on mobile and low-end devices meets Lighthouse targets | TASK-2.11 |
 
 ## 17. Cloudflare Pages Deployment
 
